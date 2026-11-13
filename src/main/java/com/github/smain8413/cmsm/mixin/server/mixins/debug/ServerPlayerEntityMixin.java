@@ -27,18 +27,8 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Sc
 
     @Override
     public boolean startRiding(Entity entity, boolean force){
-//        try {
-//            ServerWorld tempWorld = MixinUtils.temporaryWorld(this.server);
-//            teleport(tempWorld, 1000000F, 255F, 10000000F, 0f, 0f);
-//        } catch (NoSuchFieldException | IllegalAccessException e) {
-//            LOGGER.error(e.toString());
-//        }
         LOGGER.info("resetting world");
-//        MixinUtils.resetWorld(server, new Random().nextLong());
-//        ResetWorld.Reset(server, new Random().nextLong());
         WorldReset.Reset(server);
         return false;
     }
-
-//    @Inject(method = "dimensionChanged", at= @At("TAIL"))
 }

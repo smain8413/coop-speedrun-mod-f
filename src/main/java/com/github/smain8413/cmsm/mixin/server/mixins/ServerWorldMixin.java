@@ -62,7 +62,7 @@ public abstract class ServerWorldMixin extends World implements ServerWorldAcces
     }
 
     @Inject(method = "addPlayer", at = @At("TAIL"))
-    private void onAddPlayer(ServerPlayerEntity player, CallbackInfo ci) {
+    private void onAddPlayer(ServerPlayerEntity player, CallbackInfo ci) { //DEBUG
         Vec3d playerPos = player.getPos();
         HorseEntity horseEntity = new HorseEntity(EntityType.HORSE, this);
         horseEntity.updatePosition(playerPos.x, playerPos.y, playerPos.z);

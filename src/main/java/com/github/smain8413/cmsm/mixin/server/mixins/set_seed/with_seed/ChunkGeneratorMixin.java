@@ -8,10 +8,7 @@ import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(ChunkGenerator.class)
 public abstract class ChunkGeneratorMixin {
-    /**
-     * @author
-     * @reason
-     */
+
     @Unique
     @Environment(EnvType.SERVER)
     public abstract ChunkGenerator withSeed(long seed);

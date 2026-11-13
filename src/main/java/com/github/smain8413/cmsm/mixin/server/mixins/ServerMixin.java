@@ -3,22 +3,12 @@ package com.github.smain8413.cmsm.mixin.server.mixins;
 import com.github.smain8413.cmsm.Cmsm;
 import com.github.smain8413.cmsm.utils.object_oriented.ProgressData;
 import com.github.smain8413.cmsm.utils.interfaces.ServerExtras;
-import com.mojang.authlib.GameProfileRepository;
-import com.mojang.authlib.minecraft.MinecraftSessionService;
-import com.mojang.datafixers.DataFixer;
 import net.minecraft.nbt.NbtIo;
-import net.minecraft.resource.ResourcePackManager;
-import net.minecraft.resource.ServerResourceManager;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.ServerTask;
-import net.minecraft.server.WorldGenerationProgressListenerFactory;
 import net.minecraft.server.command.CommandOutput;
-import net.minecraft.util.UserCache;
-import net.minecraft.util.registry.RegistryTracker;
 import net.minecraft.util.snooper.SnooperListener;
 import net.minecraft.util.thread.ReentrantThreadExecutor;
-import net.minecraft.world.SaveProperties;
-import net.minecraft.world.level.storage.LevelStorage;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,7 +17,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.io.IOException;
-import java.net.Proxy;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.function.Function;
@@ -81,10 +70,10 @@ public abstract class ServerMixin extends ReentrantThreadExecutor<ServerTask> im
         progressData = data;
     }
 
-    @Inject(method = "<init>", at = @At("RETURN"))
-    private void onConstruct(Thread thread, RegistryTracker.Modifiable modifiable, LevelStorage.Session session, SaveProperties saveProperties, ResourcePackManager resourcePackManager, Proxy proxy, DataFixer dataFixer, ServerResourceManager serverResourceManager, MinecraftSessionService minecraftSessionService, GameProfileRepository gameProfileRepository, UserCache userCache, WorldGenerationProgressListenerFactory worldGenerationProgressListenerFactory, CallbackInfo ci) {
-//        MinecraftServer ts = (MinecraftServer)((Object)this);
-//        Cmsm.SERVER = (ts);
-//        this.minecraftCoopMultiplayerSpeedrunMod$setProgressData(new ProgressData(ts));
-    }
+//    @Inject(method = "<init>", at = @At("RETURN"))
+//    private void onConstruct(Thread thread, RegistryTracker.Modifiable modifiable, LevelStorage.Session session, SaveProperties saveProperties, ResourcePackManager resourcePackManager, Proxy proxy, DataFixer dataFixer, ServerResourceManager serverResourceManager, MinecraftSessionService minecraftSessionService, GameProfileRepository gameProfileRepository, UserCache userCache, WorldGenerationProgressListenerFactory worldGenerationProgressListenerFactory, CallbackInfo ci) {
+////        MinecraftServer ts = (MinecraftServer)((Object)this);
+////        Cmsm.SERVER = (ts);
+////        this.minecraftCoopMultiplayerSpeedrunMod$setProgressData(new ProgressData(ts));
+//    }
 }
