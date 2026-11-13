@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "cmsm",
+  "version": "${version}",
+  "name": "Co-opsies",
+  "description": "coop speedruning",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/cmsm/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.github.smain8413.cmsm.client.CmsmDataGenerator"
+    ],
+    "client": [
+      "com.github.smain8413.cmsm.client.CmsmClient"
+    ],
+    "main": [
+      "com.github.smain8413.cmsm.Cmsm"
+    ]
+  },
+  "mixins": [
+    "cmsm.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}
