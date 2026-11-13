@@ -15,7 +15,7 @@ public class WorldPreferencesScreen extends Screen {
     private double modeClicks = 1;
     private LiteralText modename = new LiteralText(currentMode);
 
-    protected WorldPreferencesScreen(Screen parent) {
+    public WorldPreferencesScreen(Screen parent) {
         super(new LiteralText("Speedrun Settings"));
         this.parent = parent;
     }

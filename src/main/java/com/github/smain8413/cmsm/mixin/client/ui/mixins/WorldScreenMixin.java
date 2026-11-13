@@ -1,6 +1,7 @@
-package com.github.smain8413.cmsm.ui;
+package com.github.smain8413.cmsm.mixin.client.ui.mixins;
 
 
+import com.github.smain8413.cmsm.ui.WorldPreferencesScreen;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.Element;
 import net.minecraft.client.gui.screen.Screen;
