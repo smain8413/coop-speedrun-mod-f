@@ -1,0 +1,34 @@
+package com.github.smain8413.cmsm.mixin.server.accessors;
+
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.WorldGenerationProgressListener;
+import net.minecraft.server.WorldGenerationProgressListenerFactory;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.World;
+import net.minecraft.world.level.storage.LevelStorage;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
+import org.spongepowered.asm.mixin.gen.Accessor;
+import org.spongepowered.asm.mixin.gen.Invoker;
+
+import java.util.Map;
+
+@Mixin(MinecraftServer.class)
+public interface ServerAccessor {
+    @Accessor("worlds")
+    @Mutable
+    Map<RegistryKey<World>, ServerWorld> cmsm$getWorlds();
+
+    @Accessor("session")
+    LevelStorage.Session cmsm$getSession();
+
+    @Invoker("createWorlds")
+    void cmsm$createWorlds(WorldGenerationProgressListener listener);
+
+    @Accessor("worldGenerationProgressListenerFactory")
+    WorldGenerationProgressListenerFactory cmsm$getWorldGenerationProgressListenerFactory();
+
+    @Invoker("loadWorld")
+    void cmsm$loadWorld();
+}

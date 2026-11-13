@@ -4,6 +4,21 @@
   "package": "com.github.smain8413.cmsm.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "server.accessors.GeneratorOptionsAccessor",
+    "server.accessors.ServerAccessor",
+    "server.accessors.debug.ServerChunkManagerAccessor",
+    "server.accessors.debug.ServerWorldAccessor",
+    "server.accessors.debug.SessionAccessor",
+    "server.accessors.debug.ThreadedAnvilChunkStorageAccessor",
+    "server.mixins.PlayerManagerMixin",
+    "server.mixins.ServerMixin",
+    "server.mixins.ServerWorldMixin",
+    "server.mixins.condition.LivingEntityMixin",
+    "server.mixins.debug.ServerPlayerEntityMixin",
+    "server.mixins.set_seed.with_seed.BiomeSourceMixin",
+    "server.mixins.set_seed.with_seed.ChunkGeneratorMixin",
+    "server.mixins.set_seed.with_seed.SurfaceChunkGeneratorMixin",
+    "server.mixins.set_seed.with_seed.VanillaLayeredBiomeSourceMixin"
   ],
   "client": [
   ],
@@ -11,6 +26,6 @@
     "defaultRequire": 1
   },
   "overwrites": {
-    "requireAnnotations": true
+    "requireAnnotations": false
   }
 }
