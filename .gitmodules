@@ -1,0 +1,3 @@
+[submodule "seedsearch"]
+	path = seedsearch
+	url = https://github.com/DJshelfmushroom/seedsearch
