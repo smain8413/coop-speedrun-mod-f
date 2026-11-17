@@ -6,7 +6,7 @@
   "description": "coop speedruning",
   "authors": [],
   "contact": {},
-  "license": "MIT",
+  "license": "",
   "icon": "assets/cmsm/icon.png",
   "environment": "*",
   "entrypoints": {

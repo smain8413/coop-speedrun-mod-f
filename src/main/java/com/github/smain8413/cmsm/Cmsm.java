@@ -16,6 +16,7 @@ public class Cmsm implements ModInitializer {
     public static final Logger LOGGER = LogManager.getLogger();
     public static String[] launchArgs;
     public static final List<String> launchArgsTemplate = List.of("--debug");
+    public static final boolean debug = Arrays.asList(FabricLoader.getInstance().getLaunchArguments(true)).contains("--debug");
     public static MinecraftServer SERVER;
     private static KeyBinding openScreenKey;
 

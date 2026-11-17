@@ -25,9 +25,9 @@ public abstract class PlayerManagerMixin {
 
     @Inject(method = "onPlayerConnect", at = @At("TAIL"))
     private void playerConnect(ClientConnection connection, ServerPlayerEntity player, CallbackInfo ci) {
-        System.out.println("hi");
+//        System.out.println("hi");
         ServerExtras serverE = (ServerExtras) Cmsm.SERVER;
-        System.out.println(server.isRunning());
+//        System.out.println(server.isRunning());
         if (!serverE.minecraftCoopMultiplayerSpeedrunMod$getProgressData().getPlayerPermissionsMap().containsKey(player)) {
             ProgressData.ProgressDataHelper.ResetPermissions playerPerms = ProgressData.ProgressDataHelper.ResetPermissions.PLAYER;
             playerPerms = server.getPlayerManager().getOpList().isOp(player.getGameProfile()) ? ProgressData.ProgressDataHelper.ResetPermissions.ADMIN : playerPerms;

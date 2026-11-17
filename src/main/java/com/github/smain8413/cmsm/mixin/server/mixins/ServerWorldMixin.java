@@ -1,5 +1,6 @@
 package com.github.smain8413.cmsm.mixin.server.mixins;
 
+import com.github.smain8413.cmsm.Cmsm;
 import com.github.smain8413.cmsm.utils.object_oriented.QueuedAction;
 import com.github.smain8413.cmsm.utils.interfaces.ServerWorldExtras;
 import net.minecraft.entity.EntityType;
@@ -57,12 +58,13 @@ public abstract class ServerWorldMixin extends World implements ServerWorldAcces
         if (tickQueueActions.isEmpty()) return;
         QueuedAction first = tickQueueActions.get(0);
         first.ticked();
-        LOGGER.info("ticks: {}", first.getTicksTillRun());
+        if (Cmsm.debug) LOGGER.info("ticks: {}", first.getTicksTillRun());
         if (first.getTicksTillRun() <= 0) tickQueueActions.remove(first);
     }
 
     @Inject(method = "addPlayer", at = @At("TAIL"))
     private void onAddPlayer(ServerPlayerEntity player, CallbackInfo ci) { //DEBUG
+        if (!Cmsm.debug) return;
         Vec3d playerPos = player.getPos();
         HorseEntity horseEntity = new HorseEntity(EntityType.HORSE, this);
         horseEntity.updatePosition(playerPos.x, playerPos.y, playerPos.z);
